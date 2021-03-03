@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@*<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>*@
+
+
+
+<div>
+    <h2>登入</h2>
+
+    @using (Html.BeginForm())
+    {
+        <div>
+            <label for="TID">帳號</label>
+            @(Html.TextBox("TextBox_AID"))
+            @(Html.ValidationMessage("VaildationMessage_AID"))
+
+        </div>
+        <div>
+            <label for="password">密碼</label>
+            @(Html.Password("Password_APassword"))
+            @(Html.ValidationMessage("VaildationMessage_APassword"))
+        </div>
+        <button type="submit" class="btn btn-primary">登入</button>
+
+    }
+</div>

@@ -1,0 +1,50 @@
+﻿@model Web.Models.SelfAssessment
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>SelfAssessment</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.CooperationLevel)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CooperationLevel)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.PersonalContributionLevel)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PersonalContributionLevel)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.SelfA)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SelfA)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
