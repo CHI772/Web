@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Web.Models.Teacher>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/T_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create_Teacher")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TPassword)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TPassword)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit_Teacher", new { id = item.TID }) |
+                @Html.ActionLink("Details", "Details_Teacher", new { id = item.TID }) |
+                @Html.ActionLink("Delete", "Delete_Teacher", new { id = item.TID })
+            </td>
+        </tr>
+    }
+
+</table>

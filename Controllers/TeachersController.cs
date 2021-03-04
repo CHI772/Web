@@ -15,13 +15,17 @@ namespace Web.Controllers
         private MoodleModel db = new MoodleModel();
 
         // GET: Teachers
-        public ActionResult Index()
+        public ActionResult Home_T()
+        {
+            return View(db.Courses.ToList());
+        }
+        public ActionResult Index_Teacher()
         {
             return View(db.Teachers.ToList());
         }
 
         // GET: Teachers/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details_Teacher(string id)
         {
             if (id == null)
             {
@@ -36,7 +40,7 @@ namespace Web.Controllers
         }
 
         // GET: Teachers/Create
-        public ActionResult Create()
+        public ActionResult Create_Teacher()
         {
             return View();
         }
@@ -46,20 +50,20 @@ namespace Web.Controllers
         // 如需詳細資料，請參閱 https://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "TID,TName,TPassword,Email")] Teacher teacher)
+        public ActionResult Create_Teacher([Bind(Include = "TID,TName,TPassword,Email")] Teacher teacher)
         {
             if (ModelState.IsValid)
             {
                 db.Teachers.Add(teacher);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index_Teacher");
             }
 
             return View(teacher);
         }
 
         // GET: Teachers/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Edit_Teacher(string id)
         {
             if (id == null)
             {
@@ -78,19 +82,19 @@ namespace Web.Controllers
         // 如需詳細資料，請參閱 https://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "TID,TName,TPassword,Email")] Teacher teacher)
+        public ActionResult Edit_Teacher([Bind(Include = "TID,TName,TPassword,Email")] Teacher teacher)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(teacher).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index_Teacher");
             }
             return View(teacher);
         }
 
         // GET: Teachers/Delete/5
-        public ActionResult Delete(string id)
+        public ActionResult Delete_Teacher(string id)
         {
             if (id == null)
             {
@@ -105,14 +109,14 @@ namespace Web.Controllers
         }
 
         // POST: Teachers/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("Delete_Teacher")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
             Teacher teacher = db.Teachers.Find(id);
             db.Teachers.Remove(teacher);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index_Teacher");
         }
 
         protected override void Dispose(bool disposing)

@@ -29,7 +29,7 @@ namespace Web.Controllers
                 LoginProcess_T(TextBox_TID, false);
 
                 //移轉到指定動作與控制器檢視頁面
-                return RedirectToAction("Index", "Courses");
+                return RedirectToAction("Home_T", "Teachers");
             }
             else
             {
@@ -55,7 +55,7 @@ namespace Web.Controllers
                 LoginProcess_A(TextBox_AID, false);
 
                 //移轉到指定動作與控制器檢視頁面
-                return RedirectToAction("Index", "Teachers");
+                return RedirectToAction("Index_Course", "Courses");
             }
             else
             {
