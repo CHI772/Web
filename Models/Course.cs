@@ -16,10 +16,12 @@ namespace Web.Models
         }
         [Key]
         [Column(Order = 0)]
+        [Display(Name ="ID")]
         public string CID { get; set; }
 
 
         [Required]
+        [Display(Name = "課程名稱")]
         public string CName { get; set; }
 
         [Key]

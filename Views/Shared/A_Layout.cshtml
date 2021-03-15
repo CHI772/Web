@@ -19,7 +19,16 @@
                 </button>
                 @Html.ActionLink("管理者首頁", "index", "home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-            
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("教師名單", "Index_Teacher", "Teachers")</li>
+                    <li>@Html.ActionLink("課程列表", "Index_Course", "Courses")</li>
+                    <li>@Html.ActionLink("學生名單", "Index_Student", "Students")</li>
+                    <li>@Html.ActionLink("任務管理", "Index_Mission", "Missions")</li>
+                    <li>@Html.ActionLink("總成績", "contact", "home")</li>
+                    <li>@Html.ActionLink("學習歷程", "Index_LB", "LearningBehaviors")</li>
+                </ul>
+            </div>
         </div>
     </div>
     <div class="container body-content">

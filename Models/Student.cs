@@ -20,21 +20,24 @@ namespace Web.Models
 
         [Key]
         [Column(Order = 0)]
+        [Display(Name = "ID")]
         public string SID { get; set; }
 
 
         [Required]
+        [Display(Name = "學生姓名")]
         public string SName { get; set; }
 
 
         [Required]
         [StringLength(18, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "密碼")]
         public string SPassword { get; set; }
 
 
         [Required]
+        [Display(Name = "性別")]
         public Boolean Sex { get; set; }
 
 

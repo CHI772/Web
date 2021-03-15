@@ -4,6 +4,7 @@
     ViewBag.Title = "Index_Teacher";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <h2>Index</h2>
 
 <p>
@@ -11,9 +12,6 @@
 </p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Teacher.TName)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.CName)
         </th>
@@ -24,15 +22,10 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Teacher.TName)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.CName)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit_Course", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details_Course", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete_Course", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("查看課程", "Details_Course", new { /* id=item.PrimaryKey */ }) 
             </td>
         </tr>
     }

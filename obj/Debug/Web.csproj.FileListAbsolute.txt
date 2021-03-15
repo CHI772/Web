@@ -98,3 +98,12 @@ D:\Web\obj\Debug\Web.Migrations.InitialCreate.resources
 D:\Web\obj\Debug\Web.csproj.GenerateResource.cache
 D:\Web\obj\Debug\Web.Migrations._11.resources
 D:\Web\obj\Debug\Web.Migrations._2.resources
+D:\Web\bin\Microsoft.Owin.dll
+D:\Web\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Web\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Web\bin\Microsoft.Owin.Security.dll
+D:\Web\bin\Owin.dll
+D:\Web\bin\Microsoft.Owin.xml
+D:\Web\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Web\bin\Microsoft.Owin.Security.xml
+D:\Web\bin\Microsoft.Owin.Security.Cookies.xml
