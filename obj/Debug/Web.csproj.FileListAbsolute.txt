@@ -107,3 +107,5 @@ D:\Web\bin\Microsoft.Owin.xml
 D:\Web\bin\Microsoft.Owin.Host.SystemWeb.xml
 D:\Web\bin\Microsoft.Owin.Security.xml
 D:\Web\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Web\obj\Debug\Web.Migrations.admin.resources
+D:\Web\obj\Debug\Web.Migrations.pk.resources

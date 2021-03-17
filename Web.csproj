@@ -176,6 +176,14 @@
     <Compile Include="Migrations\202103010855399_2.Designer.cs">
       <DependentUpon>202103010855399_2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103171223294_admin.cs" />
+    <Compile Include="Migrations\202103171223294_admin.Designer.cs">
+      <DependentUpon>202103171223294_admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103171227217_pk.cs" />
+    <Compile Include="Migrations\202103171227217_pk.Designer.cs">
+      <DependentUpon>202103171227217_pk.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Course.cs" />
@@ -239,11 +247,11 @@
     <Content Include="Views\Teachers\Details_Teacher.cshtml" />
     <Content Include="Views\Teachers\Edit_Teacher.cshtml" />
     <Content Include="Views\Teachers\Index_Teacher.cshtml" />
-    <Content Include="Views\Courses\Create_Course.cshtml" />
-    <Content Include="Views\Courses\Delete_Course.cshtml" />
-    <Content Include="Views\Courses\Details_Course.cshtml" />
-    <Content Include="Views\Courses\Edit_Course.cshtml" />
-    <Content Include="Views\Courses\Index_Course.cshtml" />
+    <Content Include="Views\Teachers\Create_Course.cshtml" />
+    <Content Include="Views\Teachers\Delete_Course.cshtml" />
+    <Content Include="Views\Teachers\Details_Course.cshtml" />
+    <Content Include="Views\Teachers\Edit_Course.cshtml" />
+    <Content Include="Views\Teachers\Index_Course.cshtml" />
     <Content Include="Views\Groups\Create_Group.cshtml" />
     <Content Include="Views\Groups\Delete_Group.cshtml" />
     <Content Include="Views\Groups\Details_Group.cshtml" />
@@ -313,6 +321,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Courses\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -336,6 +345,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103010855399_2.resx">
       <DependentUpon>202103010855399_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103171223294_admin.resx">
+      <DependentUpon>202103171223294_admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103171227217_pk.resx">
+      <DependentUpon>202103171227217_pk.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

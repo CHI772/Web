@@ -127,5 +127,19 @@ namespace Web.Controllers
             }
             base.Dispose(disposing);
         }
+        public ActionResult Details_Course(string cid, string tid)
+        {
+            if (cid == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Course course = db.Courses.Find(cid, tid);
+            if (course == null)
+            {
+                return HttpNotFound();
+            }
+            return View(course);
+        }
+
     }
 }

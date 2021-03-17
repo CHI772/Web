@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>課程總覽</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create_Course")
@@ -25,7 +25,7 @@
                 @Html.DisplayFor(modelItem => item.CName)
             </td>
             <td>
-                @Html.ActionLink("查看課程", "Details_Course", new { /* id=item.PrimaryKey */ }) 
+                @Html.ActionLink("查看課程", "Details_Course", new { cid = item.CID, tid = item.TID }) 
             </td>
         </tr>
     }

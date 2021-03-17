@@ -22,13 +22,13 @@ namespace Web.Controllers
         }
 
         // GET: Courses/Details/5
-        public ActionResult Details_Course(string id)
+        public ActionResult Details_Course(string cid, string tid)
         {
-            if (id == null)
+            if (cid == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Course course = db.Courses.Find(id);
+            Course course = db.Courses.Find(cid, tid);
             if (course == null)
             {
                 return HttpNotFound();
@@ -54,7 +54,7 @@ namespace Web.Controllers
             {
                 db.Courses.Add(course);
                 db.SaveChanges();
-                return RedirectToAction("Index_Course");
+                return RedirectToAction("Home_T");
             }
 
             ViewBag.TID = new SelectList(db.Teachers, "TID", "TName", course.TID);
@@ -117,7 +117,7 @@ namespace Web.Controllers
             Course course = db.Courses.Find(id);
             db.Courses.Remove(course);
             db.SaveChanges();
-            return RedirectToAction("Index_Course");
+            return RedirectToAction("Home_T");
         }
 
         protected override void Dispose(bool disposing)

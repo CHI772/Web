@@ -17,6 +17,7 @@ namespace Web.Models
         [Key]
         [Column(Order = 0)]
         [Display(Name ="ID")]
+        [Required]
         public string CID { get; set; }
 
 
