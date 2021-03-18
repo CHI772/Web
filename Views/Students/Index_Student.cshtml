@@ -1,10 +1,12 @@
 ﻿@model IEnumerable<Web.Models.Student>
 
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/Course_Layout.cshtml";
 }
 
 <!DOCTYPE html>
+
+<h2>學生名單</h2>
 
 <html>
 <head>
@@ -12,16 +14,20 @@
     <title>Index</title>
 </head>
 <body>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
+    <div style="position: relative">
+        <button class="btn btn-primary" data-toggle="modal" data-target="#UploadModal">
+            匯入Excel
+        </button>
+
+        <p style="position:absolute; left:100px;top:0">
+            @Html.ActionLink("新增一筆資料", "Create_Student", null, new { @class = "btn btn-primary" })
+        </p>
+    </div>
+  
     <table class="table">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.SName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SPassword)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Sex)
@@ -34,32 +40,52 @@
             </th>
             <th></th>
         </tr>
-    
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.SName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SPassword)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sex)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Stage)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Grade)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-    }
-    
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sex)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Stage)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Grade)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit_Student", new { sid=item.SID, cid = item.CID }) |
+                    @Html.ActionLink("Details", "Details_Student", new { sid=item.SID, cid = item.CID }) |
+                    @Html.ActionLink("Delete", "Delete_Student", new { sid=item.SID, cid = item.CID })
+                </td>
+            </tr>
+        }
+
     </table>
+    @Html.Partial("_UploadFile")
+
+    @section scripts
+{
+        <script src="~/Scripts/bootbox.js"></script>
+        <script src="~/Scripts/jquery.form.js"></script>
+        <script src="~/Scripts/project.js"></script>
+        <script src="~/Scripts/project.extends.js"></script>
+        <script src="~/Scripts/uploadfile.js"></script>
+        <script src="~/Scripts/projet.ZipCode.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function()
+        {
+            var actionUrls =
+            {
+                Upload: '@Url.Action("Upload", "Students")',
+                Import: '@Url.Action("Import", "Students")',
+            };
+            project.UploadFile.Initialize(actionUrls);
+        });
+        </script>
+    }
 </body>
 </html>

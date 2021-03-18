@@ -15,13 +15,14 @@ namespace Web.Controllers
         private MoodleModel db = new MoodleModel();
 
         // GET: LearningBehaviors
-        public ActionResult Index()
+        public ActionResult Index_LB()
         {
             return View(db.LearnB.ToList());
         }
+        
 
         // GET: LearningBehaviors/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details_LB(int? id)
         {
             if (id == null)
             {
@@ -36,7 +37,7 @@ namespace Web.Controllers
         }
 
         // GET: LearningBehaviors/Create
-        public ActionResult Create()
+        public ActionResult Create_LB()
         {
             return View();
         }
@@ -46,7 +47,7 @@ namespace Web.Controllers
         // 如需詳細資料，請參閱 https://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,MID,SID,GID,ActionType,subAction,Detail,Time")] LearningBehavior learningBehavior)
+        public ActionResult Create_LB([Bind(Include = "ID,MID,SID,GID,ActionType,subAction,Detail,Time")] LearningBehavior learningBehavior)
         {
             if (ModelState.IsValid)
             {
@@ -59,7 +60,7 @@ namespace Web.Controllers
         }
 
         // GET: LearningBehaviors/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit_LB(int? id)
         {
             if (id == null)
             {
@@ -78,7 +79,7 @@ namespace Web.Controllers
         // 如需詳細資料，請參閱 https://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,MID,SID,GID,ActionType,subAction,Detail,Time")] LearningBehavior learningBehavior)
+        public ActionResult Edit_LB([Bind(Include = "ID,MID,SID,GID,ActionType,subAction,Detail,Time")] LearningBehavior learningBehavior)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +91,7 @@ namespace Web.Controllers
         }
 
         // GET: LearningBehaviors/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete_LB(int? id)
         {
             if (id == null)
             {

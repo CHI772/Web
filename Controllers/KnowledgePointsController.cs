@@ -15,13 +15,13 @@ namespace Web.Controllers
         private MoodleModel db = new MoodleModel();
 
         // GET: KnowledgePoints
-        public ActionResult Index()
+        public ActionResult Index_KP()
         {
             return View(db.KPs.ToList());
         }
 
         // GET: KnowledgePoints/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details_KP(int? id)
         {
             if (id == null)
             {
@@ -36,7 +36,7 @@ namespace Web.Controllers
         }
 
         // GET: KnowledgePoints/Create
-        public ActionResult Create()
+        public ActionResult Create_KP()
         {
             return View();
         }
@@ -46,20 +46,20 @@ namespace Web.Controllers
         // 如需詳細資料，請參閱 https://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "KID,MID,KContent")] KnowledgePoints knowledgePoints)
+        public ActionResult Create_KP([Bind(Include = "KID, MID,KContent")] KnowledgePoints knowledgePoints)
         {
             if (ModelState.IsValid)
             {
                 db.KPs.Add(knowledgePoints);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index_KP");
             }
 
             return View(knowledgePoints);
         }
 
         // GET: KnowledgePoints/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit_KP(int? id)
         {
             if (id == null)
             {
@@ -78,7 +78,7 @@ namespace Web.Controllers
         // 如需詳細資料，請參閱 https://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "KID,MID,KContent")] KnowledgePoints knowledgePoints)
+        public ActionResult Edit_KP([Bind(Include = "KID,MID,KContent")] KnowledgePoints knowledgePoints)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace Web.Controllers
         }
 
         // GET: KnowledgePoints/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete_KP(int? id)
         {
             if (id == null)
             {

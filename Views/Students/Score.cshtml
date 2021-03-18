@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Web.Models.Student>
+
+@{
+    Layout = "~/Views/Shared/Course_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Score</title>
+</head>
+<body>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="https://localhost:44307/Students/Score">修課學生</a></li>
+        <li><a href="http://localhost:57874/Checks/Index">任務組別</a></li>
+    </ul>
+    <br />
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SID)
+            <th>
+                @Html.DisplayNameFor(model => model.SName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Score)
+            </th>
+            <th>學習歷程</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SID)
+                <td>
+                    @Html.DisplayFor(modelItem => item.SName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Score)
+                </td>
+                <td>
+                    @Html.ActionLink("查看", "Edit", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
+</html>

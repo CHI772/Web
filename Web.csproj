@@ -54,6 +54,9 @@
     <Reference Include="FormFactory, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\FormFactory.5.0.77\lib\netstandard2.0\FormFactory.dll</HintPath>
     </Reference>
+    <Reference Include="LinqToExcel, Version=1.11.0.0, Culture=neutral, PublicKeyToken=9c8ea65a58f03f1f, processorArchitecture=MSIL">
+      <HintPath>packages\LinqToExcel.1.11.0\lib\LinqToExcel.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Owin, Version=4.1.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Owin.4.1.1\lib\net45\Microsoft.Owin.dll</HintPath>
@@ -69,6 +72,15 @@
     </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion, Version=1.13.52.2, Culture=neutral, PublicKeyToken=0669cf0452175907, processorArchitecture=MSIL">
+      <HintPath>packages\LinqToExcel.1.11.0\lib\Remotion.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Data.Linq, Version=1.13.52.2, Culture=neutral, PublicKeyToken=0669cf0452175907, processorArchitecture=MSIL">
+      <HintPath>packages\LinqToExcel.1.11.0\lib\Remotion.Data.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Interfaces, Version=1.13.52.2, Culture=neutral, PublicKeyToken=0669cf0452175907, processorArchitecture=MSIL">
+      <HintPath>packages\LinqToExcel.1.11.0\lib\Remotion.Interfaces.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -164,6 +176,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\Helpers\CheckResult.cs" />
+    <Compile Include="Infrastructure\Helpers\ImportDataHelpers.cs" />
     <Compile Include="Migrations\202102200801306_InitialCreate.cs" />
     <Compile Include="Migrations\202102200801306_InitialCreate.Designer.cs">
       <DependentUpon>202102200801306_InitialCreate.cs</DependentUpon>
@@ -183,6 +197,34 @@
     <Compile Include="Migrations\202103171227217_pk.cs" />
     <Compile Include="Migrations\202103171227217_pk.Designer.cs">
       <DependentUpon>202103171227217_pk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103172351238_student.cs" />
+    <Compile Include="Migrations\202103172351238_student.Designer.cs">
+      <DependentUpon>202103172351238_student.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103180057227_22.cs" />
+    <Compile Include="Migrations\202103180057227_22.Designer.cs">
+      <DependentUpon>202103180057227_22.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103180833119_diplayName.cs" />
+    <Compile Include="Migrations\202103180833119_diplayName.Designer.cs">
+      <DependentUpon>202103180833119_diplayName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103181108200_student_score.cs" />
+    <Compile Include="Migrations\202103181108200_student_score.Designer.cs">
+      <DependentUpon>202103181108200_student_score.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103181149302_missionAddTime.cs" />
+    <Compile Include="Migrations\202103181149302_missionAddTime.Designer.cs">
+      <DependentUpon>202103181149302_missionAddTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103181247191_idtest.cs" />
+    <Compile Include="Migrations\202103181247191_idtest.Designer.cs">
+      <DependentUpon>202103181247191_idtest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103181258065_deleteid.cs" />
+    <Compile Include="Migrations\202103181258065_deleteid.Designer.cs">
+      <DependentUpon>202103181258065_deleteid.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -206,10 +248,20 @@
     <Compile Include="ViewModel\T_LoginViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Scripts\bootbox.all.js" />
+    <Content Include="Scripts\bootbox.all.min.js" />
+    <Content Include="Scripts\bootbox.js" />
+    <Content Include="Scripts\bootbox.locales.js" />
+    <Content Include="Scripts\bootbox.locales.min.js" />
+    <Content Include="Scripts\bootbox.min.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\jasny-bootstrap.css" />
+    <Content Include="Scripts\jasny-bootstrap.js" />
+    <Content Include="Content\jasny-bootstrap.min.css" />
+    <Content Include="Scripts\jasny-bootstrap.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -217,6 +269,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="libman.json" />
+    <Content Include="Content\jasny-bootstrap.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -228,6 +281,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\uploadfile.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -265,7 +319,6 @@
     <Content Include="Views\LearningBehaviors\Create_LB.cshtml" />
     <Content Include="Views\LearningBehaviors\Delete_LB.cshtml" />
     <Content Include="Views\LearningBehaviors\Details_LB.cshtml" />
-    <Content Include="Views\LearningBehaviors\Edit_LB.cshtml" />
     <Content Include="Views\LearningBehaviors\Index_LB.cshtml" />
     <Content Include="Views\Missions\Create_Mission.cshtml" />
     <Content Include="Views\Missions\Delete_Mission.cshtml" />
@@ -318,9 +371,13 @@
     <Content Include="Views\Admins\Edit_Admin.cshtml" />
     <Content Include="Views\Admins\Index_Admin.cshtml" />
     <Content Include="Views\Admins\Home_A.cshtml" />
+    <Content Include="Views\Students\_UploadFile.cshtml" />
+    <Content Include="Views\Shared\Course_Layout.cshtml" />
+    <Content Include="Views\Students\Score.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="FileUpload\" />
     <Folder Include="Views\Courses\" />
   </ItemGroup>
   <ItemGroup>
@@ -351,6 +408,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103171227217_pk.resx">
       <DependentUpon>202103171227217_pk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103172351238_student.resx">
+      <DependentUpon>202103172351238_student.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103180057227_22.resx">
+      <DependentUpon>202103180057227_22.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103180833119_diplayName.resx">
+      <DependentUpon>202103180833119_diplayName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103181108200_student_score.resx">
+      <DependentUpon>202103181108200_student_score.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103181149302_missionAddTime.resx">
+      <DependentUpon>202103181149302_missionAddTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103181247191_idtest.resx">
+      <DependentUpon>202103181247191_idtest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103181258065_deleteid.resx">
+      <DependentUpon>202103181258065_deleteid.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

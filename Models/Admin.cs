@@ -9,12 +9,14 @@ namespace Web.Models
     public class Admin
     {
         [Key]
+        [Display(Name = "管理者編號")]
         public string AID { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "密碼")]
         public string APassword { get; set; }
 
+        [Display(Name = "管理者姓名")]
         public string AName { get; set; }
     }
 }

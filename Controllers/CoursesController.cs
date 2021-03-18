@@ -62,13 +62,13 @@ namespace Web.Controllers
         }
 
         // GET: Courses/Edit/5
-        public ActionResult Edit_Course(string id)
+        public ActionResult Edit_Course(string cid, string tid)
         {
-            if (id == null)
+            if (cid == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Course course = db.Courses.Find(id);
+            Course course = db.Courses.Find(cid, tid);
             if (course == null)
             {
                 return HttpNotFound();
@@ -95,13 +95,13 @@ namespace Web.Controllers
         }
 
         // GET: Courses/Delete/5
-        public ActionResult Delete_Course(string id)
+        public ActionResult Delete_Course(string cid, string tid)
         {
-            if (id == null)
+            if (cid == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Course course = db.Courses.Find(id);
+            Course course = db.Courses.Find(cid, tid);
             if (course == null)
             {
                 return HttpNotFound();
@@ -112,9 +112,9 @@ namespace Web.Controllers
         // POST: Courses/Delete/5
         [HttpPost, ActionName("Delete_Course")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(string cid, string tid)
         {
-            Course course = db.Courses.Find(id);
+            Course course = db.Courses.Find(cid);
             db.Courses.Remove(course);
             db.SaveChanges();
             return RedirectToAction("Home_T");

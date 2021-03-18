@@ -16,8 +16,7 @@ namespace Web.Models
         }
         [Key]
         [Column(Order = 0)]
-        [Display(Name ="ID")]
-        [Required]
+        [Display(Name ="課程編號")]
         public string CID { get; set; }
 
 

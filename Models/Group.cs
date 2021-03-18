@@ -18,6 +18,8 @@ namespace Web.Models
             LearnB = new HashSet<LearningBehavior>();
             TeacherA = new HashSet<TeacherAssessment>();
         }
+
+        [Display(Name = "組別編號")]
         public int GID { get; set; }
 
         [Key]
@@ -32,6 +34,7 @@ namespace Web.Models
 
         [Key]
         [Column(Order = 1)]
+        [Display(Name = "任務編號")]
         public string MID { get; set; }
 
         public virtual Mission Mission { get; set; }

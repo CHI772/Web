@@ -1,7 +1,7 @@
 ﻿@model Web.Models.Student
 
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/Course_Layout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -59,8 +59,8 @@
         </dl>
     </div>
     <p>
-        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("Edit", "Edit", new { sid = Model.SID, cid = Model.CID  }) |
+        @Html.ActionLink("Back to List", "Index_Student", "Students")
     </p>
 </body>
 </html>

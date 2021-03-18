@@ -11,14 +11,17 @@ namespace Web.Models
     {
         [Key]
         [Column(Order = 0)]
+        [Display(Name = "編號")]
         public int PID { get; set; }
 
 
         [Required]
+        [Display(Name = "提示內容")]
         public string PContent { get; set; }
 
         [Key]
         [Column(Order = 1)]
+        [Display(Name = "任務編號")]
         public string MID { get; set; }
 
 

@@ -20,7 +20,7 @@ namespace Web.Models
 
         [Key]
         [Column(Order = 0)]
-        [Display(Name = "ID")]
+        [Display(Name = "學生編號")]
         public string SID { get; set; }
 
 
@@ -38,7 +38,7 @@ namespace Web.Models
 
         [Required]
         [Display(Name = "性別")]
-        public Boolean Sex { get; set; }
+        public string Sex { get; set; }
 
 
         [Required]
@@ -50,9 +50,12 @@ namespace Web.Models
         [Display(Name = "年級")]
         public string Grade { get; set; }
 
+        [Display(Name = "積分")]
+        public string Score { get; set; }
 
         [Key]
         [Column(Order = 1)]
+        [Display(Name = "課程編號")]
         public string CID { get; set; }
 
 

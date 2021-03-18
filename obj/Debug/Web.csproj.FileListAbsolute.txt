@@ -109,3 +109,15 @@ D:\Web\bin\Microsoft.Owin.Security.xml
 D:\Web\bin\Microsoft.Owin.Security.Cookies.xml
 D:\Web\obj\Debug\Web.Migrations.admin.resources
 D:\Web\obj\Debug\Web.Migrations.pk.resources
+D:\Web\obj\Debug\Web.Migrations.student.resources
+D:\Web\bin\LinqToExcel.dll
+D:\Web\bin\Remotion.Data.Linq.dll
+D:\Web\bin\Remotion.dll
+D:\Web\bin\Remotion.Interfaces.dll
+D:\Web\bin\LinqToExcel.xml
+D:\Web\obj\Debug\Web.Migrations._22.resources
+D:\Web\obj\Debug\Web.Migrations.diplayName.resources
+D:\Web\obj\Debug\Web.Migrations.student_score.resources
+D:\Web\obj\Debug\Web.Migrations.missionAddTime.resources
+D:\Web\obj\Debug\Web.Migrations.idtest.resources
+D:\Web\obj\Debug\Web.Migrations.deleteid.resources

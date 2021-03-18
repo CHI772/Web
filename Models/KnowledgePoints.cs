@@ -15,9 +15,11 @@ namespace Web.Models
         }
         [Key]
         [Column(Order = 0)]
+        [Display(Name = "編號")]
         public int KID { get; set; }
 
         [Required]
+        [Display(Name = "知識點")]
         public string KContent { get; set; }
 
         [Key]

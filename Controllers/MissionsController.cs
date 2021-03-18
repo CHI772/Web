@@ -15,19 +15,19 @@ namespace Web.Controllers
         private MoodleModel db = new MoodleModel();
 
         // GET: Missions
-        public ActionResult Index()
+        public ActionResult Index_Mission()
         {
             return View(db.Missions.ToList());
         }
 
         // GET: Missions/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details_Mission(string mid, string cid)
         {
-            if (id == null)
+            if (mid == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Mission mission = db.Missions.Find(id);
+            Mission mission = db.Missions.Find(mid, cid);
             if (mission == null)
             {
                 return HttpNotFound();
@@ -36,7 +36,7 @@ namespace Web.Controllers
         }
 
         // GET: Missions/Create
-        public ActionResult Create()
+        public ActionResult Create_Mission()
         {
             return View();
         }
@@ -46,26 +46,26 @@ namespace Web.Controllers
         // 如需詳細資料，請參閱 https://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MID,CID,MName,MDetail")] Mission mission)
+        public ActionResult Create_Mission([Bind(Include = "MID,CID,MName,MDetail")] Mission mission)
         {
             if (ModelState.IsValid)
             {
                 db.Missions.Add(mission);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create_KP");
             }
 
             return View(mission);
         }
 
         // GET: Missions/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Edit_Mission(string mid, string cid)
         {
-            if (id == null)
+            if (mid == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Mission mission = db.Missions.Find(id);
+            Mission mission = db.Missions.Find(mid, cid);
             if (mission == null)
             {
                 return HttpNotFound();
@@ -78,25 +78,25 @@ namespace Web.Controllers
         // 如需詳細資料，請參閱 https://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MID,CID,MName,MDetail")] Mission mission)
+        public ActionResult Edit_Mission([Bind(Include = "MID,CID,MName,MDetail")] Mission mission)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(mission).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index_Mission");
             }
             return View(mission);
         }
 
         // GET: Missions/Delete/5
-        public ActionResult Delete(string id)
+        public ActionResult Delete_Mission(string mid, string cid)
         {
-            if (id == null)
+            if (mid == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Mission mission = db.Missions.Find(id);
+            Mission mission = db.Missions.Find(mid, cid);
             if (mission == null)
             {
                 return HttpNotFound();
@@ -107,12 +107,12 @@ namespace Web.Controllers
         // POST: Missions/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(string mid, string cid)
         {
-            Mission mission = db.Missions.Find(id);
+            Mission mission = db.Missions.Find(mid);
             db.Missions.Remove(mission);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index_Mission");
         }
 
         protected override void Dispose(bool disposing)

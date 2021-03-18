@@ -11,15 +11,19 @@ namespace Web.Models
     {
         [Key]
         [Column(Order = 0)]
+        [Display(Name = "編號")]
         public int ID { get; set; }
 
         [Required]
+        [Display(Name = "動作類型")]
         public string ActionType { get; set; }
 
         [Required]
+        [Display(Name = "動作子項")]
         public string subAction { get; set; }
 
         [Required]
+        [Display(Name = "動作內容")]
         public string Detail { get; set; }
 
         public string Time { get; set; }
